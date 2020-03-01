@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Javascript Quiz</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+
+</head>
+
+<header>
+
+    <nav class="navbar navbar-light bg-light" id="staticHead">
+        <span id="highscores">
+          View Highscores
+        </span>
+        <span id='timeRem'>
+            Time Remaining: <span id='timeLeft'></span>
+        </span>
+      </nav>
+
+</header>
+
+<body>
+
+    <div class='container'>
+
+        <div class='row'>
+
+            <div class='col-md-12' style="margin-top: 50px;">
+    
+                <div class="card">
+                    <div class="card-header">
+                      <h5 style='text-align: center;'>Javascript Quiz Master 9000!</h5>
+                    </div>
+                    <div class="card-body">
+                        <h5 id='question' style="text-align: center;">Answer as many questions as possible in the allotted time!</h5>
+                        <p id='answers'>Press begin to start the quiz!</p>
+                      <a href='#' id="subBtn" class="btn btn-primary">Begin</a>
+                    </div>
+                  </div>
+    
+            </div>
+    
+        </div>
+
+    </div>
+    
+<script src='script.js'></script>
+
+</body>
