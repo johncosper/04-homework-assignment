@@ -1,4 +1,3 @@
-//you can set this to whatever, for debugging later you can set it to something either very low or very high
 var secondsLeft = 120;
 
 function setTime() {
@@ -23,67 +22,35 @@ function setTime() {
 
 }
 
-var quizQuestions = [{
-    
-    question: "question 1",
-    
-        respOptions: [
-            "option a",
-            "option b",
-            "option c",
-            "option d"
-    ],
-    
-    answer: "option c"
-},
-{
-    question: "question 2",
-    
-    respOptions: [
-        "option a",
-        "option b",
-        "option c",
-        "option d"
-    ],
-    
-    answer: "option c"
-},
-{
-    question: 'question 3',
+var startBtn = document.getElementById('startBtn');
+var questionContainer = document.getElementById('question-container');
 
-    respOptions: [
-        'option a',
-        'option b',
-        'option c',
-        'option d'
-    ],
+startBtn.addEventListener('click', start)
 
-    answer: 'option c'
-},
-{
-    question: 'question 4',
+function start() { 
+startBtn.classList.add('hide');
+questionContainer.classList.remove('hide');
+nextQuestion()
+}
 
-    respOptions: [
-        'option a',
-        'option b',
-        'option c',
-        'option d'
-    ],
+var questions = [
+    {
+        question: 'when building an array which syntax is used?',
+        answers: [
+            { text: '()', correct: false},
+            { text: '{}', correct: false},
+            { text: '[]', correct: true},
+            { text: '<>', correct: false},
+        ],
 
-    answer: 'option c'
-},
-{
-    question: 'question 5',
-
-    respOptions: [
-        'option a',
-        'option b',
-        'option c',
-        'option d',
-    ],
-
-    answer: 'option c'
-},
+        question: ''
+    }
 ]
 
-var submitBtn = document.getElementById('subBtn');
+function nextQuestion() {
+
+}
+
+function selectAnswer() {
+
+}

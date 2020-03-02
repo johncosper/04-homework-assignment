@@ -1,0 +1,59 @@
+*, *::before, *::after {
+    box-sizing: border-box ;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 15px;
+}
+
+body {
+    background-color: skyblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+
+}
+
+#timer {
+    text-align: right;
+}
+
+.container {
+    width: 800px;
+    max-width: 80%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.btn {
+    background-color: skyblue;
+    border-radius: 5px;
+    padding: 10px 10px;
+}
+
+.btn:hover {
+    border: solid 1px;
+}
+
+.startBtn, .nextBtn {
+    font-size: 30px;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide {
+    display: none;
+}
