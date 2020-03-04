@@ -13,20 +13,31 @@
 
     <div class="container">
         <div id="question-container" class="hide">
-            <div id="timer">Time left: <span></span></div>
+            <div id="timer">Time left: <span id="time-left"></span></div>
+            <div id="score">Score: <span id="current-score"></span></div>
             <div id="question">Question</div>
-            <div id="ansBtns" class="btn-grid">
+            <div id="answer-buttons" class="btn-grid">
                 <button class="btn">Answer 1</button>
                 <button class="btn">Answer 2</button>
                 <button class="btn">Answer 3</button>
                 <button class="btn">Answer 4</button>
             </div>
         </div>
+        
         <div class="controls">
-            <button id="startBtn" class="startBtn btn">Start!</button>
-            <button id="nextBtn" class="nextBtn btn hide">Next</button>
+            <button id="start-btn" class="start-btn btn">Start</button>
+            <button id="next-btn" class="next-btn btn hide">Next</button>
+            <button id="highscore-btn" class="highscore-btn btn hide">Highscores</button>
         </div>
-    </div>
+        <div id="highscore" class="hide">
+            <p class="phigh">Enter your initials to save your highscore!</p>
+            <input id="intials">
+            <button id="highscore-submit" class="btn hide">Submit</button>
+            <div id="highscore-container">
+                <ol id="highscore-list"></ol>
+            </div>
+        </div>
+      </div>
     
 </body>
 </html>
