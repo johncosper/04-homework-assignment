@@ -38,6 +38,7 @@ var score = 0
 let shuffledQuestions, currentQuestionIndex
 
 startButton.addEventListener('click', startGame)
+restartButton.addEventListener('click', restart)
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++
     setNextQuestion()
@@ -75,6 +76,14 @@ function startGame() {
     questionContainerElement.classList.remove('hide')
     highscoreButton.classList.add('hide')
     setNextQuestion()
+}
+
+function restart() {
+    startButton.classList.remove('hide')
+    questionContainerElement.classList.add('hide')
+    highscoreButton.classList.add('hide')
+    restartButton.classList.add('hide')
+    endOfQuiz()
 }
 
 function setNextQuestion() {
@@ -118,10 +127,8 @@ function selectAnswer(e) {
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
         nextButton.classList.remove('hide')
     } else {
-        startButton.innerText = 'Restart'
-        startButton.classList.remove('hide')
         highscoreButton.classList.remove('hide')
-
+        restartButton.classList.remove('hide')
     }
 }
 
@@ -141,8 +148,6 @@ function clearStatusClass(element) {
 
 function endOfQuiz() {
     clearInterval(timerInterval)
-    startButton.classList.remove('hide')
-    startButton.innerText = 'Restart'
 }
 
 var questions = [
