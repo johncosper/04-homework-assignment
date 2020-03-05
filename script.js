@@ -1,16 +1,18 @@
 var secondsLeft = 60;
+var timerInterval;
 
 function setTime() {
     
-    var timerInterval = setInterval(function() {
+    timerInterval = setInterval(function() {
         
         secondsLeft--;
        
         timeLeft.textContent = `${secondsLeft}`;
         
         if (secondsLeft <= 0) {
+            
             endOfQuiz();
-            return
+            return;
         }
     
     }, 1000);
@@ -22,6 +24,7 @@ var startButton = document.getElementById('start-btn')
 var nextButton = document.getElementById('next-btn')
 var highscoreButton = document.getElementById('highscore-btn')
 var submitButton = document.getElementById('highscore-submit')
+var clearButton = document.getElementById('clear-button')
 var questionContainerElement = document.getElementById('question-container')
 var highscoreElement = document.getElementById('highscore')
 var questionElement = document.getElementById('question')
@@ -44,14 +47,18 @@ highscoreButton.addEventListener('click', function(){
     startButton.classList.remove('hide')
     highscoreButton.classList.add('hide')
     submitButton.classList.remove('hide')
+    clearButton.classList.remove('hide')
     startButton.innerText = 'Restart'
 })
 submitButton.addEventListener('click', function() {
     var node = document.createElement("LI")
-    var textnode = document.createTextNode(intialsInput.value, currentScore.value)     
+    var textnode = document.createTextNode(intialsInput.value + ' - ' + score)     
     node.appendChild(textnode)   
     document.getElementById("highscore-list").appendChild(node)
     return;
+})
+clearButton.addEventListener('click', function() {
+    document.getElementById('highscore-list').removeChild(node)
 })
 
 function startGame() {
@@ -60,9 +67,11 @@ function startGame() {
     currentQuestionIndex = 0
     score = 0
     currentScore.innerText = score
+    secondsLeft = 60
     setTime()
     timeLeft.innerText = secondsLeft
     questionContainerElement.classList.remove('hide')
+    highscoreButton.classList.add('hide')
     setNextQuestion()
 }
 
@@ -98,6 +107,8 @@ function selectAnswer(e) {
     if (selectedButton.dataset.correct) {
       score++
       currentScore.innerText = score
+    } else {
+        secondsLeft = secondsLeft - 10
     }
     Array.from(answerButtonsElement.children).forEach(button => {
     setStatusClass(button, button.dataset.correct)
@@ -127,6 +138,7 @@ function clearStatusClass(element) {
 }
 
 function endOfQuiz() {
+    clearInterval(timerInterval)
     startButton.classList.remove('hide')
     startButton.innerText = 'Restart'
 }
