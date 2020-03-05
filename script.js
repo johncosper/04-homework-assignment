@@ -21,6 +21,7 @@ function setTime() {
 
 var timeLeft = document.getElementById('time-left')
 var startButton = document.getElementById('start-btn')
+var restartButton = document.getElementById('restart-btn')
 var nextButton = document.getElementById('next-btn')
 var highscoreButton = document.getElementById('highscore-btn')
 var submitButton = document.getElementById('highscore-submit')
@@ -58,7 +59,8 @@ submitButton.addEventListener('click', function() {
     return;
 })
 clearButton.addEventListener('click', function() {
-    document.getElementById('highscore-list').removeChild(node)
+    var noNode = document.getElementById('highscore-list')
+    noNode.removeChild(noNode.childNodes[0])
 })
 
 function startGame() {
